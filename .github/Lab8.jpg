@@ -1,0 +1,28 @@
+$ mkdir lab8-repo
+$ cd lab8-repo
+$ git init
+
+# 첫 번째 커밋
+$ echo "메인 브랜치 작업" > file1.txt
+$ git add file1.txt
+$ git commit -m "첫 번째 커밋"
+
+# 두 번째 커밋
+$ echo "메인 브랜치 추가 작업" >> file1.txt
+$ git add file1.txt
+$ git commit -m "두 번째 커밋"
+
+$ git branch testing
+$ git checkout testing
+
+$ echo "이것은 새로운 기능입니다" > feature.txt
+$ git add feature.txt
+$ git commit -m "새로운 기능 추가 커밋"
+
+$ git checkout main
+$ echo "메인 브랜치에서 이슈 해결" >> file1.txt
+$ git add file1.txt
+$ git commit -m "메인에서 이슈 해결"
+$ git merge testing
+$ git branch -d testing
+$ git log --oneline --decorate --graph --all
